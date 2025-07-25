@@ -15,9 +15,9 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll() // ✅ 모든 요청 허용
+                        .anyRequest().permitAll()
                 )
-                .csrf(AbstractHttpConfigurer::disable); // Rest API 테스트 시 CSRF도 비활성화
+                .csrf(AbstractHttpConfigurer::disable);
 
         return http.build();
     }
